@@ -1,5 +1,5 @@
 .frame {
-  background: linear-gradient(rgb(39, 37, 37), 90%, rgb(219, 205, 126));
+  background: linear-gradient(rgb(39, 37, 37), 90%, rgb(180, 178, 168));
   color: rgb(255, 255, 255);
   max-width: 700px;
   margin: 0 auto;
@@ -15,6 +15,9 @@ ul {
   list-style: none;
   padding: 10px;
   margin-top: 30px;
+}
+li:first-letter {
+  text-transform: capitalize;
 }
 .city {
   font-size: 35px;
