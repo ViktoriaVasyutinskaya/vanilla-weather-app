@@ -1,3 +1,30 @@
-h1 {
-  color: brown;
+.frame {
+  background-color: rgb(56, 54, 54);
+  color: rgb(255, 255, 255);
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 40px;
+  min-width: 600px;
+}
+.degree {
+  font-size: 40px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.city {
+  font-size: 35px;
+}
+.container {
+  display: block;
+  margin: 20px auto;
+  max-width: 700px;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  margin-left: 20px;
 }
