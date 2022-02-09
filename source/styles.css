@@ -54,3 +54,7 @@ body {
 #city {
   font-size: 44px;
 }
+.weather-icon {
+  display: inline-block;
+  text-align: center;
+}

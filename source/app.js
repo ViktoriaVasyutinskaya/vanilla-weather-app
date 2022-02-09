@@ -41,9 +41,14 @@ function showTemp(response) {
   feelsLike.innerHTML = `Feels like: ${Math.round(
     response.data.main.feels_like
   )}°`;
+  let locationIcon = document.querySelector(".weather-icon");
+  let icon = response.data.weather[0].icon;
+  locationIcon.innerHTML = `<img src="icons/${icon}.png"></img>`;
+  console.log(response.data.weather[0].icon);
 }
 
 let apiKey = "8dc5c84de9b99758c12092b7cd18ffae";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+let city = "Moscow";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 console.log(apiUrl);
 axios.get(`${apiUrl}`).then(showTemp);
