@@ -1,19 +1,20 @@
 .frame {
-  background-color: rgb(56, 54, 54);
+  background: linear-gradient(rgb(39, 37, 37), 90%, rgb(219, 205, 126));
   color: rgb(255, 255, 255);
   max-width: 700px;
   margin: 0 auto;
   border-radius: 15px;
   padding: 40px;
   min-width: 600px;
+  display: inline-block;
 }
 .degree {
-  font-size: 40px;
+  font-size: 44px;
 }
 ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  padding: 10px;
+  margin-top: 30px;
 }
 .city {
   font-size: 35px;
@@ -27,4 +28,26 @@ body {
   font-family: "Montserrat", sans-serif;
   position: relative;
   margin-left: 20px;
+}
+.current-weather strong {
+  color: gold;
+  font-size: 56px;
+}
+.type-city {
+  background: rgb(238, 219, 109);
+  border: 2px solid rgb(110, 107, 107);
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  margin-right: 50px;
+}
+.button-current {
+  background: rgb(238, 228, 173);
+  border: 2px solid rgb(110, 107, 107);
+  border-radius: 15px;
+  text-align: center;
+  color: dimgray;
+}
+#city {
+  font-size: 44px;
 }
