@@ -16,26 +16,27 @@
   <body>
     <div class="container">
       <div class="frame">
+        <form id="search-form">
+          <input type="text" placeholder="Search city" class="type-city" />
+          <button type="submit" class="button-current">Current 🔎</button>
+          <ul>
+            <li id="city">Almere</li>
+            <li>Wednesday 9:00</li>
+          </ul>
+        </form>
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-6 current-weather text-end">
             <img
               src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
               alt="cloudy"
             />
-            9°C|F
+            <strong>9</strong>°C| <a href="#">°F</a>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6 text-start">
             <ul>
-              <li>Precipitation: 9%</li>
+              <li>Clouds</li>
               <li>Humidity: 90%</li>
               <li>Wind: 29km/h</li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <ul>
-              <li>Almere</li>
-              <li>Wednesday 9:00</li>
-              <li>Cloudy</li>
             </ul>
           </div>
         </div>
