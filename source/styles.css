@@ -4,12 +4,12 @@
   max-width: 700px;
   margin: 0 auto;
   border-radius: 15px;
-  padding: 40px;
+  padding: 20px;
   min-width: 600px;
   display: inline-block;
 }
 .degree {
-  font-size: 44px;
+  font-size: 34px;
 }
 ul {
   list-style: none;
@@ -31,23 +31,24 @@ body {
   font-family: "Montserrat", sans-serif;
   position: relative;
   margin-left: 20px;
+  max-width: 700px;
 }
 .current-weather strong {
   color: gold;
-  font-size: 56px;
+  font-size: 40px;
 }
 .type-city {
-  background: rgb(238, 219, 109);
+  background: rgb(187, 186, 183);
   border: 2px solid rgb(110, 107, 107);
-  border-radius: 15px;
+  border-radius: 5px;
   text-align: center;
-  color: white;
-  margin-right: 50px;
+  color: rgb(29, 27, 27);
+  margin-right: 10px;
 }
-.button-current {
+.button-search {
   background: rgb(238, 228, 173);
   border: 2px solid rgb(110, 107, 107);
-  border-radius: 15px;
+  border-radius: 5px;
   text-align: center;
   color: dimgray;
 }
@@ -57,4 +58,21 @@ body {
 .weather-icon {
   display: inline-block;
   text-align: center;
+}
+.current-conditions .active {
+  color: gold;
+  cursor: default;
+  text-decoration: none;
+}
+.current-conditions.active:hover {
+  color: gold;
+  cursor: default;
+  text-decoration: none;
+}
+.current-conditions {
+  color: rgb(238, 228, 173);
+  cursor: default;
+}
+#openSource {
+  display: inline-block;
 }
