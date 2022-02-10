@@ -18,8 +18,13 @@
     <div class="container">
       <div class="frame">
         <form id="search-form">
-          <input type="text" placeholder="Search city" class="type-city" />
-          <button type="submit" class="button-current">Current 🔎</button>
+          <input
+            type="search"
+            placeholder="type city..."
+            class="type-city"
+            autocomplete="off"
+          />
+          <input type="submit" value="search" class="button-search" />
           <ul>
             <li id="city">Almere</li>
             <li id="date">Wednesday 9:00</li>
@@ -29,7 +34,9 @@
           <div class="col-sm-6 current-weather text-end">
             <span class="current-conditions">
               <div class="weather-icon"><img src="icons/unknown.png" /></div>
-              <strong id="currentTemp">9</strong>°C| <a href="#">°F</a>
+              <strong id="currentTemp">9</strong>
+              <a href="" id="celcius" class="active">C</a> |
+              <a href="" id="fahrenheit">F</a>
             </span>
           </div>
 
