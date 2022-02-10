@@ -24,7 +24,8 @@ function setDate(timestamp) {
 function showTemp(response) {
   console.log(response.data);
   let tempElem = document.querySelector("#currentTemp");
-  tempElem.innerHTML = `${Math.round(response.data.main.temp)}°`;
+  celciusTemp = response.data.main.temp;
+  tempElem.innerHTML = `${Math.round(celciusTemp)}°`;
   let date = document.querySelector("#date");
   date.innerHTML = setDate(
     response.data.dt * 1000 - response.data.timezone * 1000
@@ -38,13 +39,13 @@ function showTemp(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   let feelsLike = document.querySelector("#feel");
-  feelsLike.innerHTML = `Feels like: ${Math.round(
-    response.data.main.feels_like
-  )}°`;
+  feelsLikeFahr = response.data.main.feels_like;
+  console.log(feelsLike);
+  feelsLike.innerHTML = `Feels like: ${Math.round(feelsLikeFahr)}°`;
+
   let locationIcon = document.querySelector(".weather-icon");
   let icon = response.data.weather[0].icon;
   locationIcon.innerHTML = `<img src="icons/${icon}.png"></img>`;
-  console.log(response.data.weather[0].icon);
 }
 
 function search(city) {
@@ -58,8 +59,24 @@ function submitSearch(event) {
   let cityInput = document.querySelector(".type-city");
   search(cityInput.value);
 }
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = document.querySelector("#currentTemp");
+  let fahrValue = (celciusTemp * 9) / 5 + 32;
+  fahrenheitTemp.innerHTML = `${Math.round(fahrValue)}°`;
+  let feelsLikeFahrTemp = document.querySelector("#feel");
+  let fahrValueFeel = (feelsLikeFahr * 9) / 5 + 32;
+  feelsLikeFahrTemp.innerHTML = `Feels like ${Math.round(fahrValueFeel)}°`;
+}
 
-search("Moscow");
+let celciusTemp = null;
+let feelsLikeFahr = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitSearch);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+console.log(fahrenheitLink);
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+search("Moscow");
