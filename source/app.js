@@ -42,7 +42,6 @@ function showTemp(response) {
   feelsLikeFahr = response.data.main.feels_like;
   console.log(feelsLike);
   feelsLike.innerHTML = `Feels like: ${Math.round(feelsLikeFahr)}°`;
-
   let locationIcon = document.querySelector(".weather-icon");
   let icon = response.data.weather[0].icon;
   locationIcon.innerHTML = `<img src="icons/${icon}.png"></img>`;
@@ -58,6 +57,7 @@ function submitSearch(event) {
   event.preventDefault();
   let cityInput = document.querySelector(".type-city");
   search(cityInput.value);
+  showCelcius(event);
 }
 function showFahrenheit(event) {
   event.preventDefault();
@@ -68,14 +68,13 @@ function showFahrenheit(event) {
   fahrenheitTemp.innerHTML = `${Math.round(fahrValue)}°`;
   let feelsLikeFahrTemp = document.querySelector("#feel");
   let fahrValueFeel = (feelsLikeFahr * 9) / 5 + 32;
-  feelsLikeFahrTemp.innerHTML = `Feels like ${Math.round(fahrValueFeel)}°`;
+  feelsLikeFahrTemp.innerHTML = `Feels like: ${Math.round(fahrValueFeel)}°`;
 }
 function showCelcius(event) {
   event.preventDefault();
   let temperatureElem = document.querySelector("#currentTemp");
   celciusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-
   temperatureElem.innerHTML = `${Math.round(celciusTemp)}°`;
   let feelsLikeElem = document.querySelector("#feel");
   feelsLikeElem.innerHTML = `Feels like: ${Math.round(feelsLikeFahr)}°`;
