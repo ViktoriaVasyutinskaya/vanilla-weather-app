@@ -62,11 +62,23 @@ function submitSearch(event) {
 function showFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = document.querySelector("#currentTemp");
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrValue = (celciusTemp * 9) / 5 + 32;
   fahrenheitTemp.innerHTML = `${Math.round(fahrValue)}°`;
   let feelsLikeFahrTemp = document.querySelector("#feel");
   let fahrValueFeel = (feelsLikeFahr * 9) / 5 + 32;
   feelsLikeFahrTemp.innerHTML = `Feels like ${Math.round(fahrValueFeel)}°`;
+}
+function showCelcius(event) {
+  event.preventDefault();
+  let temperatureElem = document.querySelector("#currentTemp");
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
+  temperatureElem.innerHTML = `${Math.round(celciusTemp)}°`;
+  let feelsLikeElem = document.querySelector("#feel");
+  feelsLikeElem.innerHTML = `Feels like: ${Math.round(feelsLikeFahr)}°`;
 }
 
 let celciusTemp = null;
@@ -76,7 +88,9 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitSearch);
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
-console.log(fahrenheitLink);
 fahrenheitLink.addEventListener("click", showFahrenheit);
+
+let celciusLink = document.querySelector("#celcius");
+celciusLink.addEventListener("click", showCelcius);
 
 search("Moscow");
