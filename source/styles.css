@@ -76,3 +76,17 @@ body {
 #openSource {
   display: inline-block;
 }
+.weather-forecast {
+  text-align: center;
+  margin-top: 15px;
+}
+.week-days {
+  font-size: 18px;
+  opacity: 0.7;
+}
+.temp-days {
+  font-size: 14px;
+}
+.min-temp {
+  opacity: 0.6;
+}
