@@ -21,6 +21,28 @@ function setDate(timestamp) {
   return `Last updated: ${day} ${hours}:${minutes}`;
 }
 
+function showForecast() {
+  let forecastElem = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 text-start">
+              <div class="week-days">${day}</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt=""
+              />
+              <div class="temp-days">
+                <span class="max-temp">10°</span>
+                <span class="min-temp">6°</span>
+        </div>
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElem.innerHTML = forecastHTML;
+}
+
 function showTemp(response) {
   console.log(response.data);
   let tempElem = document.querySelector("#currentTemp");
@@ -40,7 +62,6 @@ function showTemp(response) {
   wind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   let feelsLike = document.querySelector("#feel");
   feelsLikeFahr = response.data.main.feels_like;
-  console.log(feelsLike);
   feelsLike.innerHTML = `Feels like: ${Math.round(feelsLikeFahr)}°`;
   let locationIcon = document.querySelector(".weather-icon");
   let icon = response.data.weather[0].icon;
@@ -93,3 +114,4 @@ let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", showCelcius);
 
 search("Moscow");
+showForecast();
