@@ -100,7 +100,8 @@ function submitSearch(event) {
   event.preventDefault();
   let cityInput = document.querySelector(".type-city");
   search(cityInput.value);
-  showCelcius(event);
+}
+/*showCelcius(event);
 }
 function showFahrenheit(event) {
   event.preventDefault();
@@ -113,6 +114,7 @@ function showFahrenheit(event) {
   let fahrValueFeel = (feelsLikeFahr * 9) / 5 + 32;
   feelsLikeFahrTemp.innerHTML = `Feels like: ${Math.round(fahrValueFeel)}°`;
 }
+
 function showCelcius(event) {
   event.preventDefault();
   let temperatureElem = document.querySelector("#currentTemp");
@@ -122,17 +124,21 @@ function showCelcius(event) {
   let feelsLikeElem = document.querySelector("#feel");
   feelsLikeElem.innerHTML = `Feels like: ${Math.round(feelsLikeFahr)}°`;
 }
-
+/*
 let celciusTemp = null;
 let feelsLikeFahr = null;
+*/
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitSearch);
 
+/*
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showFahrenheit);
 
+
 let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", showCelcius);
+*/
 
 search("Moscow");
