@@ -31,7 +31,7 @@
           </ul>
         </form>
         <div class="row">
-          <div class="col-sm-6 current-weather text-end">
+          <div class="col-sm-6 current-weather">
             <span class="current-conditions">
               <div class="weather-icon"><img src="icons/unknown.png" /></div>
               <strong id="currentTemp"></strong>
@@ -49,7 +49,7 @@
             </span>
           </div>
 
-          <div class="col-md-6 text-start">
+          <div class="col-md-6">
             <ul>
               <li id="conditions"></li>
               <li id="humidity">Humidity:%</li>
@@ -60,9 +60,10 @@
         </div>
         <div class="weather-forecast" id="forecast">
           <div class="row">
-            <div class="col-2 text-start">
+            <div class="col-2">
               <div class="week-days">Mon</div>
               <img
+                id="icon-forecast"
                 src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
                 alt=""
                 width="15"
