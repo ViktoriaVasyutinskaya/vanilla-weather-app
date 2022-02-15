@@ -68,7 +68,7 @@ function showTemp(response) {
   console.log(response.data);
   let tempElem = document.querySelector("#currentTemp");
   celciusTemp = response.data.main.temp;
-  tempElem.innerHTML = `${Math.round(celciusTemp)}°`;
+  tempElem.innerHTML = `${Math.round(celciusTemp)}°C`;
   let date = document.querySelector("#date");
   date.innerHTML = setDate(
     response.data.dt * 1000 - response.data.timezone * 1000
