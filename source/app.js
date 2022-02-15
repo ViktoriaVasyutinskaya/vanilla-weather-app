@@ -36,7 +36,7 @@ function showForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2 text-start">
+        `<div class="col-2">
               <div class="week-days">${formatDay(forecastDay.dt)}</div>
               <img
                 src="http://openweathermap.org/img/wn/${
@@ -80,7 +80,7 @@ function showTemp(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   let feelsLike = document.querySelector("#feel");
   feelsLikeFahr = response.data.main.feels_like;
   feelsLike.innerHTML = `Feels like: ${Math.round(feelsLikeFahr)}°`;
@@ -141,4 +141,4 @@ let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", showCelcius);
 */
 
-search("Moscow");
+search("Amsterdam");
